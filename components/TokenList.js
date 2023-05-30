@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from "next/router";
 
+
 export default function TokenList() {
   const router = useRouter();
   const { address: queryAddress } = router.query;
@@ -98,7 +99,7 @@ export default function TokenList() {
           
           {!isLoading && isSubmitted && tokens.length === 0 && (
             <div className="flex items-center justify-center mt-2">
-              There's No Fungible Tokens For This Wallet
+              There&apos;s No Fungible Tokens For This Wallet
             </div>
           )}
 

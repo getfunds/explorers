@@ -60,7 +60,7 @@ export default function AddressInput() {
 
       {noNFT && (
         <div className="flex items-center justify-center mt-2">
-          There's No NFT For This Wallet
+          There&apos;s No NFT For This Wallet
         </div>
       )}
 
