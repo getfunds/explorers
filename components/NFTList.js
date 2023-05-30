@@ -1,5 +1,4 @@
 import React from "react";
-import Image from 'next/image';
 
 
 export default function AddressInput({ tokens, address }) {
@@ -42,7 +41,7 @@ export default function AddressInput({ tokens, address }) {
                  
             <div className="md:flex px-4 leading-none max-w-4xl">
               <div className="flex-none">
-                <Image
+                <img
                   className="h-72 w-56 rounded-md shadow-2xl transform -translate-y-4 border-4 border-gray-300 shadow-lg "
                   src={token.offChainData?.image || "/not-found.jpg"}
                   alt={token.offChainData?.name || "undefined"}
@@ -74,7 +73,7 @@ export default function AddressInput({ tokens, address }) {
         className="ml-auto inline-flex items-center bg-neutral-400 hover:bg-neutral-200 text-white text-xs rounded px-3 py-0 transition-colors duration-300"
       >
       
-      <Image className="w-5 h-5" src="/magiceden.png" alt="Magic Eden" />
+      <img className="w-5 h-5" src="/magiceden.png" alt="Magic Eden" />
       <span className="font-medium text-sm text-slate-700">Magic Eden</span>
       </a>
     </div>
