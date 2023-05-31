@@ -39,21 +39,20 @@ const RichestAddresses = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Check if data has already been fetched
-        if (richestAddresses.length === 0) {
-          const data = await fetchRichestAddresses();
-          setRichestAddresses(data);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        // Fetch data from JSON file if there is an error
+        // Fetch data from JSON file
         const jsonFileData = await fetchJsonFile();
         setRichestAddresses(jsonFileData);
+
+        // Fetch data from RPC call
+        const rpcData = await fetchRichestAddresses();
+        setRichestAddresses(rpcData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
       }
     };
 
     fetchData();
-  }, [richestAddresses]);
+  }, []);
 
   return (
     <div className="flex flex-col items-center">
@@ -85,7 +84,6 @@ const RichestAddresses = () => {
         </table>
       )}
     </div>
-    
   );
 };
 
